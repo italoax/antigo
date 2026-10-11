@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lime-termite-186128.hostingersite.com/sitemap.xml
