@@ -53,22 +53,6 @@
   .stamp { right: 8px; bottom: 18px; width: 96px; height: 96px; padding-top: 10px; }
   .stamp span { font-size: 24px; }
   .scroll-note { bottom: 8px; min-height: 44px; display: inline-flex; align-items: center; }
-  .occasion-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 16px var(--page-gutter);
-    gap: 0;
-    font-size: clamp(17px, 4.5vw, 21px);
-    line-height: 1.4;
-  }
-  .occasion-strip > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 56px;
-    padding: 12px 6px;
-  }
-  .occasion-strip > span:nth-of-type(-n + 2) { border-bottom: 1px solid #f7f5ed26; }
-  .occasion-strip > span:nth-of-type(odd) { border-right: 1px solid #f7f5ed26; }
 
   .section-heading { margin-bottom: 24px; }
   .section-heading > p { font-size: 15px; line-height: 1.7; margin-top: 16px; }

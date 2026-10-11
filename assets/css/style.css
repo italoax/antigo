@@ -323,23 +323,7 @@ em {
   font-size: 20px
 }
 
-.occasion-strip {
-  background: var(--ink);
-  color: var(--paper);
-  padding: 22px 6%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  font-family: var(--serif);
-  font-size: 19px
-}
 
-.occasion-strip i {
-  color: #d1aa7d;
-  font-size: 13px;
-  font-style: normal
-}
 
 .section {
   max-width: 1440px;
@@ -785,10 +769,6 @@ footer {
   .hero-note {
     font-size: 7px
   }
-  .occasion-strip {
-    gap: 25px;
-    font-size: 16px
-  }
   .occasion-grid {
     gap: 35px
   }
@@ -893,19 +873,6 @@ footer {
   }
   .scroll-note {
     bottom: 15px
-  }
-  .occasion-strip {
-    gap: 15px;
-    padding: 20px;
-    flex-wrap: wrap;
-    font-size: 14px
-  }
-  .occasion-strip i:last-of-type {
-    display: none
-  }
-  .occasion-strip span:last-child {
-    width: 100%;
-    text-align: center
   }
   .section {
     padding: 60px 6%
@@ -1362,10 +1329,6 @@ footer {
   bottom: 28px;
 }
 
-.occasion-strip {
-  padding: 24px var(--page-gutter);
-  gap: clamp(20px, 3vw, 44px);
-}
 
 .section {
   padding-block: var(--section-space);
@@ -1523,10 +1486,6 @@ footer {
   .hero h1 {
     font-size: clamp(44px, 5.4vw, 58px);
   }
-  .occasion-strip {
-    font-size: 15px;
-    gap: 20px;
-  }
   .steps {
     gap: 24px;
   }
@@ -1569,10 +1528,6 @@ footer {
   }
   .scroll-note {
     bottom: 24px;
-  }
-  .occasion-strip {
-    padding-block: 22px;
-    gap: 12px 18px;
   }
   .section-heading {
     margin-bottom: 32px;
@@ -1750,7 +1705,7 @@ footer {
   .hero-photo { height: clamp(340px, 95vw, 460px); }
   .hero-photo > img { object-position: 66% center; }
   .hero-description br { display: none; }
-  .occasion-strip span:last-child { width: auto; }
-  .occasion-strip i { display: none; }
-  .occasion-strip { display: grid; grid-template-columns: 1fr 1fr; text-align: center; gap: 12px 24px; }
 }
+
+/* Espa?o entre a abertura e a apresenta??o do carro. */
+.hero + .single-car { padding-top: 0; }
