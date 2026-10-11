@@ -1,0 +1,9 @@
+# Não armazenar respostas do site no navegador ou em caches intermediários.
+<IfModule mod_headers.c>
+  Header onsuccess unset Cache-Control
+  Header always set Cache-Control "no-store, no-cache, max-age=0, must-revalidate"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive Off
+</IfModule>
