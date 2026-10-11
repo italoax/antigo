@@ -17,6 +17,14 @@ document.addEventListener('keydown', event => {
     menuButton.focus();
   }
 });
+document.addEventListener('click', event => {
+  if (navigation.classList.contains('open') && !event.target.closest('.header')) {
+    menuButton.click();
+  }
+});
+window.matchMedia('(max-width: 760px)').addEventListener('change', () => {
+  if (navigation.classList.contains('open')) menuButton.click();
+});
 const config = window.CLASSICA_CONFIG;
 document.querySelectorAll('[data-whatsapp]').forEach(link => {
   const message = link.dataset.message || config.message;
@@ -33,6 +41,7 @@ const fullPhoto = document.querySelector('#photo-full');
 const caption = document.querySelector('#photo-caption');
 const counter = document.querySelector('#photo-counter');
 const moreButton = document.querySelector('.gallery-more');
+fullPhoto.draggable = false;
 let currentPhoto = 0;
 let previousFocus;
 
@@ -80,6 +89,22 @@ moreButton.addEventListener('click', () => {
 document.querySelector('.photo-close').addEventListener('click', () => photoDialog.close());
 document.querySelector('.photo-prev').addEventListener('click', () => showPhoto(currentPhoto - 1));
 document.querySelector('.photo-next').addEventListener('click', () => showPhoto(currentPhoto + 1));
+let photoTouchStart;
+fullPhoto.addEventListener('touchstart', event => {
+  photoTouchStart = event.touches.length === 1
+    ? { x: event.touches[0].clientX, y: event.touches[0].clientY }
+    : undefined;
+}, { passive: true });
+fullPhoto.addEventListener('touchend', event => {
+  if (!photoTouchStart || !event.changedTouches.length) return;
+  const deltaX = event.changedTouches[0].clientX - photoTouchStart.x;
+  const deltaY = event.changedTouches[0].clientY - photoTouchStart.y;
+  photoTouchStart = undefined;
+  if (Math.abs(deltaX) >= 50 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+    showPhoto(currentPhoto + (deltaX < 0 ? 1 : -1));
+  }
+}, { passive: true });
+fullPhoto.addEventListener('touchcancel', () => { photoTouchStart = undefined; });
 photoDialog.addEventListener('keydown', event => {
   if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
     event.preventDefault();

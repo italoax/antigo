@@ -1,0 +1,136 @@
+/* Ajustes de celular reunidos após os estilos gerais. */
+@media (max-width: 760px) {
+  :root {
+    --page-gutter: clamp(16px, 5vw, 28px);
+    --section-space: 48px;
+    --column-gap: 28px;
+    --muted: #5e655b;
+  }
+
+  html { scroll-padding-top: 100px; }
+  body { font-size: 16px; }
+  h2 { font-size: clamp(30px, 8.2vw, 42px); line-height: 1.2; letter-spacing: -1px; }
+
+  .header {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    background: var(--paper);
+    z-index: 10;
+    gap: 12px;
+  }
+  .logo { font-size: clamp(27px, 7.5vw, 34px); }
+  .logo span { letter-spacing: .8px; }
+  .menu-toggle {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    padding: 0;
+    border-radius: 4px;
+  }
+  .header nav {
+    top: 79px;
+    padding: 12px 16px 20px;
+    max-height: calc(100dvh - 96px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .header nav.open { gap: 4px; }
+  .header nav > a { min-height: 48px; padding: 12px 8px; font-size: 15px; }
+  .header nav > .button { margin-top: 8px; padding-inline: 16px; }
+
+  .hero { padding-block: 28px 64px; gap: 28px; }
+  .hero h1 { font-size: clamp(40px, 10.5vw, 64px); line-height: 1.12; letter-spacing: -1.5px; }
+  .hero .eyebrow { font-size: 9px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero-description { font-size: 16px; line-height: 1.7; margin-block: 20px 24px; }
+  .hero-actions { align-items: stretch; gap: 8px; }
+  .button { min-height: 52px; padding: 15px 18px; gap: 14px; font-size: 14px; }
+  .hero-gallery-link { align-self: center; min-height: 44px; padding-block: 12px; font-size: 14px; }
+  .hero-note { margin-top: 18px; font-size: 9px; letter-spacing: .7px; }
+  .hero-note .line { flex-shrink: 0; width: 20px; }
+  .hero-photo { height: clamp(300px, 88vw, 420px); border-radius: 110px 110px 0 0; }
+  .hero-photo > img { border-radius: inherit; }
+  .stamp { right: 8px; bottom: 18px; width: 96px; height: 96px; padding-top: 10px; }
+  .stamp span { font-size: 24px; }
+  .scroll-note { bottom: 8px; min-height: 44px; display: inline-flex; align-items: center; }
+  .occasion-strip { padding-block: 18px; font-size: 15px; gap: 10px 20px; }
+
+  .section-heading { margin-bottom: 24px; }
+  .section-heading > p { font-size: 15px; line-height: 1.7; margin-top: 16px; }
+  .section-heading .eyebrow, .eyebrow { font-size: 10px; letter-spacing: 1.2px; }
+  .single-car-photo { height: auto; aspect-ratio: 4 / 3; }
+  .single-car-copy h3, .whatsapp-panel h3 { font-size: 28px; line-height: 1.25; }
+  .single-car-copy > p:not(.eyebrow), .about-copy > p:not(.eyebrow) { font-size: 15px; line-height: 1.8; margin-top: 16px; }
+  .single-car-copy .button { width: 100%; }
+  .photo-grid { gap: 10px; }
+  .gallery-more { width: 100%; min-height: 48px; margin-top: 20px; font-size: 14px; }
+
+  .occasion-feature { height: clamp(360px, 100vw, 440px); }
+  .occasion-feature > div { padding: 24px 20px; }
+  .occasion-feature p, .occasion-list p { font-size: 15px; line-height: 1.75; }
+  .occasion-feature a, .occasion-list a, .text-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
+  .occasion-list article { gap: 14px; padding-bottom: 20px; }
+  .occasion-list h3 { font-size: 25px; }
+  .occasion-list p { max-width: none; margin-block: 12px 8px; }
+  .about-image { height: clamp(280px, 85vw, 380px); }
+  .signature { font-size: 20px; line-height: 1.5; }
+  .steps { gap: 24px; }
+  .steps article { padding-top: 16px; }
+  .steps article > span { margin-bottom: 12px; }
+  .steps h3 { font-size: 24px; }
+  .steps p { font-size: 15px; line-height: 1.75; margin-top: 12px; }
+  .quote-banner > p { font-size: clamp(30px, 8.5vw, 42px); }
+  .quote-banner .button { width: 100%; justify-content: space-between; }
+  .faq > div > p:last-child { font-size: 15px; }
+  .faq-list details { padding-block: 14px; }
+  .faq-list summary { min-height: 48px; font-size: 16px; line-height: 1.5; gap: 16px; }
+  .faq-list summary span { flex-shrink: 0; }
+  .faq-list details p { font-size: 15px; line-height: 1.8; padding-right: 0; margin-top: 12px; }
+  .contact-copy h2 { font-size: clamp(36px, 10vw, 48px); }
+  .contact-copy > p:not(.eyebrow) { font-size: 15px; }
+  .whatsapp-panel { padding: 24px 18px; min-width: 0; }
+  .whatsapp-panel > p:not(.eyebrow):not(.form-note) { font-size: 15px; margin-block: 16px; }
+  .whatsapp-number { min-height: 44px; display: flex; align-items: center; justify-content: center; margin-block: 16px; }
+  .whatsapp-panel .form-note { font-size: 12px; }
+
+  footer { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+  .footer-top { align-items: flex-start; gap: 20px; }
+  .footer-top > p { font-size: 18px; }
+  .back-top { min-height: 44px; display: inline-flex; align-items: center; font-size: 13px; margin-top: 0; }
+  .footer-social { font-size: 14px; gap: 8px; }
+  .footer-social a { min-height: 44px; }
+  .footer-bottom { font-size: 12px; line-height: 1.7; }
+  .footer-bottom > a { min-height: 44px; display: inline-flex; align-items: center; }
+
+  .photo-dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: max(64px, calc(env(safe-area-inset-top) + 52px)) 12px max(20px, env(safe-area-inset-bottom));
+  }
+  .photo-dialog[open] { display: flex; flex-direction: column; }
+  .photo-close { width: 48px; height: 48px; top: max(8px, env(safe-area-inset-top)); right: 12px; }
+  .photo-view { position: relative; display: block; min-height: 0; flex: 1; }
+  .photo-view img { height: 100%; object-fit: contain; touch-action: pan-y; }
+  .photo-prev, .photo-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    z-index: 1;
+    background: var(--paper);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #233b3020;
+  }
+  .photo-prev { left: 4px; }
+  .photo-next { right: 4px; }
+  .photo-caption { align-items: flex-start; padding-top: 16px; font-size: 13px; line-height: 1.5; gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .footer-top > p { width: 100%; }
+}
